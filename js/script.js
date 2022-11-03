@@ -21,8 +21,9 @@ function calculate() {
   const fahrenheit = parseFloat(document.getElementById("fahrenheit").value)
 
   // process
-  const Temperature = (fahrenheit-32)*5/9
+  const Temperature = ((fahrenheit - 32) * 5) / 9
 
   // output
-  document.getElementById("temperature").innerHTML = "The temperature is: " + Temperature + " °C"
+  document.getElementById("temperature").innerHTML =
+    "The temperature is: " + Temperature + " °C"
 }
