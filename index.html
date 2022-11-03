@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<!--- ICS2O-My first PWA --->
+<!---ICS2O-Unit-3-03-JS--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="My first PWA" />
+    <meta name="description" content="We calculate fahrenheit to celsius" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Mikey Gloriani" />
     <meta name="theme-color" content="#FFFFFF" />
-    <title>GitHub page as PWA template</title>
+    <title>Converting Fahrenheit to Celsius</title>
     <link
       rel="canonical"
-      href="https://mikeygloriani.github.io/ICS2O-Template-PWA/"
+      href="https://mikeygloriani.github.io/ICS2O-Unit-3-03-JS/"
     />
-    <link rel="manifest" href="/ICS2O-Template-PWA/manifest.webmanifest" />
+    <link rel="manifest" href="/ICS2O-Unit-3-03-JS/manifest.webmanifest" />
     <link rel="stylesheet" href="./css/style.css" />
     <!--- None blocking for Lighthouse report --->
     <!--- https://stackoverflow.com/questions/32759272/how-to-load-css-asynchronously --->
@@ -45,36 +45,56 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   </head>
-  <title>My first PWA</title>
+  <title>Converting Fahrenheit to Celsius</title>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">My first PWA</span>
+          <span class="mdl-layout-title">Converting Fahrenheit to Celsius</span>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <p></p>
-        <img
-          src="./images/notebook-animation.svg"
-          alt="Computer"
-          width="25%"
-          height="25%"
-        />
-        <p></p>
+        <table>
+          <tr>
+            <th>
+              <h2>Fahrenheit to Celsius equation</h2>
+              <h3>(32°F - 32) x 5/9 = 0°C</h3>
+            </th>
+          </tr>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <p>Insert the temperature in fahrenheit</p>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input
+              class="mdl-textfield__input"
+              type="number"
+              step=".01"
+              placeholder="e.g. 15"
+              pattern="-?[0-9]*(\.[0-9]+)?"
+              id="fahrenheit"
+              aria-label="fahrenheit"
+            />
+            <label class="mdl-textfield__label" for="fahrenheit">Temperature in Fahrenheit ...</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          cm
+        </form>
+        <br />
         <!-- Raised button with ripple -->
         <button
           class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
+          onclick="calculate()"
         >
-          Say "Hello, World!"
+          Calculate
         </button>
-        <!-- basic text -->
-        <p></p>
-        <div id="hello-world"></div>
+        <br />
+        <div id="answers">
+          <div id="temperature"></div>
+        </div>
       </main>
     </div>
   </body>
 </html>
+

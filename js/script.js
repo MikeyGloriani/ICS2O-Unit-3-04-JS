@@ -1,5 +1,5 @@
 // Created by: Mikey Gloriani
-// Created on: Oct 2022
+// Created on: Nov 2022
 // This file contains the JS functions for index.html
 
 "use strict"
@@ -8,14 +8,21 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-Template-PWA/sw.js", {
-    scope: "/ICS2O-Template-PWA/",
+  navigator.serviceWorker.register("/ICS2O-Unit-3-03-JS/sw.js", {
+    scope: "/ICS2O-Unit-3-03-JS/",
   })
 }
 
 /**
- * This function displays an alert.
+ * This function calculates the volume of a sphere
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+function calculate() {
+  // input
+  const fahrenheit = parseFloat(document.getElementById("fahrenheit").value)
+
+  // process
+  const Temperature = (fahrenheit-32)*5/9
+
+  // output
+  document.getElementById("temperature").innerHTML = "The temperature is: " + Temperature + " °C"
 }
